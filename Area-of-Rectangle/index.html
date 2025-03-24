@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .container{
+        body{
+        
+        }
+      .container{
        display:flex;
        justify-content: center;
        align-items: center;
@@ -17,7 +20,6 @@
        padding: 10px 20px ;
        text-align:center;
       }
-
       .input-num{
         width:300px;
         font-size:16px;
@@ -74,32 +76,35 @@
       .text-result{
        font-size: 20px;
       }
+      
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="box">
-           <h1 class="h1">Area Of Rectangle</h1>
-           <input type="number" class="input-num" id="length" placeholder="Enter the Length"/>
-           <input type="number" class="input-num" id="width" placeholder="Enter the Width"/>
-           <p id="result" class="text-result">
-              --
-           </p>
-           &nbsp;
-           <div class="btn">
-               <button class="reset" onclick="Reset()">
-                   Reset
-                 </button>
-           <br>
-           <button class="mult" onclick="Area()">
-               Area
-           </button>
-           </div>
-       
-        </div>
-        </div>  
-    <script>
-        function Area()
+<div class="container">
+ <div class="box">
+    <h1 class="h1">Area Of Rectangle</h1>
+    <input type="number" class="input-num" id="length" placeholder="Enter the Length"/>
+    <input type="number" class="input-num" id="width" placeholder="Enter the Width"/>
+    <p id="result" class="text-result">
+       --
+    </p>
+    &nbsp;
+    <div class="btn">
+        <button class="reset" onclick="Reset()">
+            Reset
+          </button>
+    <br>
+    <button class="mult" onclick="Area()">
+        Area
+    </button>
+    </div>
+
+ </div>
+ </div>  
+</body>
+<script>
+    
+    function Area()
     {
         const lengthElement = document.getElementById("length");
         const widthElement = document.getElementById("width");
@@ -122,7 +127,6 @@
         const total = parseInt(num1) * parseInt(num2);
         resultElement.innerText = `Area Of Rectangle: ${total}`;
     }
-
     function Reset()
     {
         const lengthElement = document.getElementById("length");
@@ -134,6 +138,6 @@
         resultElement.innerText = "-";
 
     }
-    </script>
-</body>
+   
+</script>
 </html>
