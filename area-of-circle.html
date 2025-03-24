@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of Circle</title>
+    <style>
+        body{
+        font-family: Arial, Helvetica, sans-serif;
+        display:flex;
+       justify-content: center;
+       align-items: center;
+       height:100vh;
+       background-color:#f4f4f4;
+        }
+      .container{
+        background-color:white;
+        padding: 20px ;
+        border-radius:10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align:center;
+        width:500px;
+        
+       }
+
+       .input, button {
+        margin:10px;
+        padding: 8px;
+        width:80%;
+       }
+       .button{
+        background-color: #007bff;
+        color:white;
+        border:none;
+        cursor:pointer;
+       }
+       button : hover{
+        background-color:#0056b3;
+       }
+       .btn-rectangle{
+        width:200px;
+        height:60px;
+        justify-content: center;
+        font-size: 18px;
+        display:block;
+        border-radius: 30px;
+        cursor: pointer;
+        margin-left:100px;
+        margin-top:50px;
+        
+        
+        background-color: rgb(192, 130, 16);
+        color: white;
+      }
+    </style>
+</head>
+<body>
+  <div>
+    <div class="container">
+        <h1>Area of Circle</h1>
+        <label for="radius">Enter Radius : </label>
+        <input type="number" id="radius" placeholder="Enter radius">
+        <button onclick="calculateArea()">Calculate</button>
+        <h3 id="result-area"></h3>
+        
+    </div>
+    <button class="btn-rectangle"><a href="index.html">Area-of-Rectangle</a></button> 
+    
+      
+    </div>
+    
+    <script>
+        function calculateArea() {
+          let radius =  document.getElementById("radius").value;
+          let resultElement =  document.getElementById("result-area");
+           if(!radius || isNaN(radius) || radius<= 0){
+            resultElement.textContent = "Please enter valid positive number.";
+            return;
+          }
+          let area = Math.PI * Math.pow(parseFloat(radius), 2);
+        
+        resultElement.textContent = `Area of Circle : ${area. toFixed(2)}`;
+        }
+      </script>
+</body>
+</html>

@@ -3,61 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area of Circle</title>
+    <title>Document</title>
     <style>
         body{
-        font-family: Arial, Helvetica, sans-serif;
-        display:flex;
-       justify-content: center;
-       align-items: center;
-       height:100vh;
-       background-color:#f4f4f4;
+        
         }
       .container{
-        background-color:white;
-        padding: 20px ;
-        border-radius:10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        text-align:center;
+       display:flex;
+       justify-content: center;
+       align-items: center;
+       min-height: 100vh;
+       }
+      .box{
+       border:1px solid black;
+       width:400px;
+       padding: 10px 20px ;
+       text-align:center;
+      }
+      .input-num{
         width:300px;
-       }
+        font-size:16px;
+        margin:10px 0;
+        padding:5px;
+        background-color:antiquewhite;
+        
+      }
+      .mult{
+        width:100px;
+        height:30px;
+        justify-content: center;
+        font-size: 18px;
+        display:block;
+        border-radius: 30px;
+        cursor: pointer;
+        margin-left: 140px;
+        background-color: rgb(61, 61, 223);
+        color: white;
 
-       .input, button {
-        margin:10px;
-        padding: 8px;
-        width:80%;
-       }
-       .button{
-        background-color: #007bff;
+      }
+      .reset{
+        width:100px;
+        height:30px;
+        justify-content: center;
+        font-size: 18px;
+        display:block;
+        border-radius: 30px;
+        cursor: pointer;
+        margin-left: 40px;
+        background-color: rgb(235, 72, 72);
         color:white;
-        border:none;
-        cursor:pointer;
-       }
-       button : hover{
-        background-color:#0056b3;
-       }
+
+      }
+      .btn{
+       display:flex;
+       flex-direction: row;
+
+      }
+      .mult:hover{
+        background-color: aqua;
+        transition:0.5s;
+        border-color:black;
+      }
+      .reset:hover{
+        background-color: rgb(241, 70, 70);
+        transition:0.5s;
+        border-color:black;
+      }
+      .h1{
+        padding:20px;
+        text-align: center;
+      }
+      .text-result{
+       font-size: 20px;
+      }
+      .btn-circle{
+        width:150px;
+        height:60px;
+        justify-content: center;
+        font-size: 18px;
+        display:block;
+        border-radius: 30px;
+        cursor: pointer;
+        margin-left: 600px;
+        background-color: rgb(192, 130, 16);
+        color: white;
+      }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Area of Circle</h1>
-        <label for="radius">Enter Radius : </label>
-        <input type="number" id="radius" placeholder="Enter radius">
-        <button onclick="calculateArea()">Calculate</button>
-        <h3 id="result-area"></h3>
+<div class="container">
+ <div class="box">
+    <h1 class="h1">Area Of Rectangle</h1>
+    <input type="number" class="input-num" id="length" placeholder="Enter the Length"/>
+    <input type="number" class="input-num" id="width" placeholder="Enter the Width"/>
+    <p id="result" class="text-result">
+       --
+    </p>
+    &nbsp;
+    <div class="btn">
+        <button class="reset" onclick="Reset()">
+            Reset
+          </button>
+    <br>
+    <button class="mult" onclick="Area()">
+        Area
+    </button>
     </div>
-    <script>
-        function calculateArea() {
-          let radius =  document.getElementById("radius").value;
-          let resultElement =  document.getElementById("result-area");
-           if(!radius || isNaN(radius) || radius<= 0){
-            resultElement.textContent = "Please enter valid positive number.";
-            return;
-          }
-          let area = Math.PI * Math.pow(parseFloat(radius), 2);
-        
-        resultElement.textContent = `Area of Circle : ${area. toFixed(2)}`;
-        }
-      </script>
+
+ </div>
+ </div> 
+<button class="btn-circle"><a href="area-of-circle.html">Area-of-Circle</a></button> 
+  
 </body>
+<script>
+    
+    function Area()
+    {
+        const lengthElement = document.getElementById("length");
+        const widthElement = document.getElementById("width");
+        const resultElement = document.getElementById("result");
+        const num1= lengthElement.value;
+        const num2=widthElement.value;
+        if(num1=="")
+    {
+      alert("Please enter the Length");
+      return;
+    }
+
+    if(num2=="")
+    {
+      alert("Please enter the width");
+      return;
+    }
+        
+
+        const total = parseInt(num1) * parseInt(num2);
+        resultElement.innerText = `Area Of Rectangle: ${total}`;
+    }
+    function Reset()
+    {
+        const lengthElement = document.getElementById("length");
+        const widthElement = document.getElementById("width");
+        const resultElement = document.getElementById("result"); 
+         
+        lengthElement.value = "";
+        widthElement.value ="";
+        resultElement.innerText = "-";
+
+    }
+   
+</script>
 </html>
