@@ -122,6 +122,18 @@
         const total = parseInt(num1) * parseInt(num2);
         resultElement.innerText = `Area Of Rectangle: ${total}`;
     }
+
+    function Reset()
+    {
+        const lengthElement = document.getElementById("length");
+        const widthElement = document.getElementById("width");
+        const resultElement = document.getElementById("result"); 
+         
+        lengthElement.value = "";
+        widthElement.value ="";
+        resultElement.innerText = "-";
+
+    }
     </script>
 </body>
 </html>
