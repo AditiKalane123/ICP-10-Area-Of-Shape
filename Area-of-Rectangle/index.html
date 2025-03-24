@@ -98,6 +98,30 @@
        
         </div>
         </div>  
-    
+    <script>
+        function Area()
+    {
+        const lengthElement = document.getElementById("length");
+        const widthElement = document.getElementById("width");
+        const resultElement = document.getElementById("result");
+        const num1= lengthElement.value;
+        const num2=widthElement.value;
+        if(num1=="")
+    {
+      alert("Please enter the Length");
+      return;
+    }
+
+    if(num2=="")
+    {
+      alert("Please enter the width");
+      return;
+    }
+        
+
+        const total = parseInt(num1) * parseInt(num2);
+        resultElement.innerText = `Area Of Rectangle: ${total}`;
+    }
+    </script>
 </body>
 </html>
