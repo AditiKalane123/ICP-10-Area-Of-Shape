@@ -46,5 +46,18 @@
         <button onclick="calculateArea()">Calculate</button>
         <h3 id="result-area"></h3>
     </div>
+    <script>
+        function calculateArea() {
+          let radius =  document.getElementById("radius").value;
+          let resultElement =  document.getElementById("result-area");
+           if(!radius || isNaN(radius) || radius<= 0){
+            resultElement.textContent = "Please enter valid positive number.";
+            return;
+          }
+          let area = Math.PI * Math.pow(parseFloat(radius), 2);
+        
+        resultElement.textContent = `Area of Circle : ${area. toFixed(2)}`;
+        }
+      </script>
 </body>
 </html>
