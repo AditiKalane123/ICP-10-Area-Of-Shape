@@ -4,28 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container{
+       display:flex;
+       justify-content: center;
+       align-items: center;
+       min-height: 100vh;
+       }
+      .box{
+       border:1px solid black;
+       width:400px;
+       padding: 10px 20px ;
+       text-align:center;
+      }
+    </style>
 </head>
 <body>
-    <div>
-        <div>
-            <h1 class="h1">Area Of Rectangle</h1>
-            <input type="number" class="input-num" id="length" placeholder="Enter the Length"/>
-            <input type="number" class="input-num" id="width" placeholder="Enter the Width"/>
-            <p id="result" class="text-result">
-                --
-             </p>
-             &nbsp;
-             <div class="btn">
-                <button class="reset" onclick="Reset()">
-                    Reset
-                  </button>
-            <br>
-            <button class="mult" onclick="Area()">
-                Area
-            </button>
-            </div>
+    <div class="container">
+        <div class="box">
+           <h1 class="h1">Area Of Rectangle</h1>
+           <input type="number" class="input-num" id="length" placeholder="Enter the Length"/>
+           <input type="number" class="input-num" id="width" placeholder="Enter the Width"/>
+           <p id="result" class="text-result">
+              --
+           </p>
+           &nbsp;
+           <div class="btn">
+               <button class="reset" onclick="Reset()">
+                   Reset
+                 </button>
+           <br>
+           <button class="mult" onclick="Area()">
+               Area
+           </button>
+           </div>
+       
         </div>
-    </div>
+        </div>  
     
 </body>
 </html>
